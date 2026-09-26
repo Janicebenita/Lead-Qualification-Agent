@@ -1,0 +1,10 @@
+spec_version: "0.1.0"
+name: lead-qualification-agent
+version: 1.0.0
+description: Scores sales leads from business fit, interest, urgency, budget, and engagement data and recommends the next action.
+author: Janice Benita F
+runtime:
+  max_turns: 20
+  timeout: 120
+tags: [sales, lead-qualification, prioritization, crm]
+
