@@ -20,3 +20,9 @@ A key limitation is that incomplete or stale CRM data can produce an unreliable 
 
 Uncertainty increases when important fields are missing or signals conflict. Human review is required before rejecting a lead, changing ownership, offering commercial terms, or making consequential customer decisions.
 
+## Implementation in This Repository
+
+The executable implementation is in `app.py`. Its `qualify` function converts the six declared qualification fields to bounded numeric values, requires at least three present fields, calculates a normalized weighted score from the `WEIGHTS` mapping, assigns Hot, Warm, Cold, or Needs Review, and returns the score, confidence, next action, and reasoning used by the Streamlit interface.
+
+The same file loads either a user-uploaded CSV or `sample_data.csv`, verifies the required columns, applies `qualify` to each row, displays the sorted results, and offers the exact results as `qualified_leads.csv`. This implementation is deterministic for the same input data and thresholds; it does not call an external model or silently enrich CRM records.
+
